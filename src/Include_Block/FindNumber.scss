@@ -1,0 +1,218 @@
+@import "../Utils_Scss/vars";
+@import "../Utils_Scss/mixins";
+
+h1{
+  @include fontSize($Mons,bold,$fontSizeH1,$lineHeightH1);  //$fontFamily,$fontSize,$lineHeight
+  color: $darkShade;
+}
+h3{
+  @include fontSize($Mons,bold,$fontSizeH3,$lineHeightH3);  //$fontFamily,$fontSize,$lineHeight
+  text-transform: uppercase;
+  color: $darkShade;
+}
+button{
+  @include fontSize($Mons,bold,$fontSizeH3,$lineHeightH3);  //$fontFamily,$fontSize,$lineHeight
+  text-transform: uppercase;
+  color: $purple;
+}
+.header-find-number{
+  height: 80px;
+}
+.search-form__block-guests-toggle-menu{
+  display: none;
+  position: absolute;
+  width: 320px;
+  top: 418px;
+  justify-content: space-between;
+  height: 159px;
+  padding: 7px 7px 13px 15px;
+  border: 1px solid rgba($darkShade,0.5);
+  border-top: none;
+  z-index: 100;
+  & .toggle-menu__guests-bg{
+    @include backgroundImage;
+    width: 100%;
+    height: 100%;
+  }
+  & .bg-minus{
+    background-image: url("/assets/img/BackgroundMinus.png");
+  }
+  & .bg-disabled{
+    filter: brightness(5);
+  }
+  & .toggle-menu__input{
+    width: 100%;
+    height: 50%;
+    padding: 0;
+    text-align: center;
+    align-self: center;
+    border: none;
+  }
+  & .bg-plus{
+    background-image: url("/assets/img/BackgroundPlus.png");
+  }
+  & .category-person-adults{
+    grid-area: category-person-adults;
+  }
+  & .bg-minus-adults{
+    grid-area: bg-adults-minus;
+  }
+  & .input-adults{
+    grid-area: adults-input;
+  }
+  & .bg-plus-adults{
+    grid-area: bg-adults-plus;
+  }
+  & .category-person-children{
+    grid-area: category-person-children;
+  }
+  & .bg-minus-children{
+    grid-area:  bg-child-minus;
+  }
+  & .input-children{
+    grid-area:  children-input;
+  }
+  & .bg-plus-children{
+    grid-area: bg-children-plus;
+  }
+  & .bg-plus-children{
+    grid-area: bg-children-plus;
+  }
+  & .category-person-babies{
+    grid-area: category-person-babies;
+  }
+  & .bg-minus-babies{
+    grid-area:  bg-babies-minus;
+  }
+  & .input-babies{
+    grid-area: babies-input;
+  }
+  & .bg-plus-babies{
+    grid-area: bg-babies-plus;
+  }
+  & .button-clear{
+    grid-area: but-clear;
+  }
+  & .button-apple{
+    grid-area: but-apply;
+  }
+  & .toggle-menu{
+    display: grid;
+    grid-template-columns: 83px 123px 30px 32px 30px;
+    grid-template-rows: 30px 7px 30px 7px 30px 19px 15px;
+    grid-template-areas: "category-person-adults . bg-adults-minus adults-input bg-adults-plus"
+                         ". . . . ."
+                         "category-person-children . bg-child-minus children-input bg-children-plus"
+                         ". . . . ."
+                         "category-person-babies . bg-babies-minus babies-input bg-babies-plus"
+                         ". . . . ."
+                         "but-clear . but-apply but-apply but-apply";
+  }
+}
+.toggle-menu__button{
+  background-color: $white;
+  border: none;
+}
+.toggle-menu__guests-category-person{
+  padding-top: 5px;
+}
+.wrapper-search-form{
+  width: 380px;
+  padding: 40px 30px 30px;
+  background-color: $white;
+}
+.search-form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.search-form__block-header{
+  width: 100%;
+}
+.search-form__block-date-input{
+  width: 100%;
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  & label {
+    align-self: flex-end;
+  }
+  & input{
+    margin-top: 6px;
+    width: 150px;
+    color: rgba($darkShade,0.75);
+  }
+}
+.search-form__block-text-input  {
+  height: 84px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  & label{
+    width: 100%;
+  }
+  & input{
+    margin-top: 5px;
+  }
+}
+input{
+  border: 1px solid rgba($darkShade,0.25);
+  padding-left: 15px;
+  height: $inputHeight;
+  @include fontSize($Mons,normal,$fontSizeBody,24px -(24px - $lineHeightBody)); //$fontFamily,$fontSize,$lineHeight
+}
+label{
+  @include fontSize($Mons,bold,$fontSizeH3,$lineHeightH3);  //$fontFamily,$fontSize,$lineHeight
+  text-transform: uppercase;
+  color: $darkShade;
+  display: flex;
+  flex-direction: column;
+}
+.background-arrow{
+  @include backgroundImage;
+  background: $white url("/assets/img/ArrowDaun.png") no-repeat calc(100% - 15px) calc(100% - 17px);
+}
+.toggle-menu__input{
+  @include fontSize($Mons,bold,$fontSizeH3,$lineHeightH3);  //$fontFamily,$fontSize,$lineHeight
+  text-transform: uppercase;
+  color: $darkShade;
+}
+.search-form__submit{
+  background: linear-gradient(180deg,$purple 0, $blue 100%);
+  border-radius: 22px;
+  border: none;
+  padding: 0;
+  @include fontSize($Mons,bold,$fontSizeH3,$lineHeightH3);  //$fontFamily,$fontSize,$lineHeight
+  text-transform: uppercase;
+  color: $white;
+  width: 100%;
+}
+.background-forward{
+  background:  url("/assets/img/ArrowForwardBatton.png");
+  @include backgroundImage;
+  background-size: inherit;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  top: -44px;
+  right: -277px;
+}
+.search-form__block-submit{
+  height: 75px;
+  width: 320px;
+  padding-top: 31px;
+}
+.search-form__block-guests-toggle-menu{
+  background-color: $white;
+}
+.toggle-input-open{
+  border-left: 1px solid rgba($darkShade,0.5);
+  border-top:  1px solid rgba($darkShade,0.5);
+  border-right:  1px solid rgba($darkShade,0.5);
+}
+.toggle-menu-open{
+  border-top: 1px solid rgba($darkShade,0.25);
+}
+.button-clear-hidden{
+  display: none;
+}

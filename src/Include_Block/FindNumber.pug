@@ -1,0 +1,74 @@
+.wrapper-search-form
+    form.search-form
+        .search-form__block-header
+            h1.search-form__header.header-find-number
+                | Найдём номера под
+                br
+                | ваши пожелания
+        .search-form__block-date-input
+            label.search-form__label
+                |Прибытие
+                input.search-form__input.background-arrow(
+                    id="arrival"
+                    placeholder = "ДД.ММ.ГГГГ"
+                )
+            label.search-form__label
+                |Выезд
+                input.search-form__input.background-arrow(
+                    id="departure"
+                    placeholder = "ДД.ММ.ГГГГ"
+                )
+        .search-form__block-text-input
+            label.search-form__label
+                | Гости
+                input.search-form__input.background-arrow(
+                    type = "text"
+                    id = "guests"
+                    placeholder="Сколько гостей"
+                )
+        .search-form__block-guests-toggle-menu.toggle-menu-open#toggleMenu
+            .toggle-menu
+                h3.toggle-menu__guests-category-person.category-person-adults
+                    | Взрослые
+                .toggle-menu__guests-bg.bg-minus.bg-minus-adults.bg-disabled
+                input.toggle-menu__input.input-adults(
+                        id = "adults"
+                        type = "text"
+                        value = "0"
+                        placeholder = "0"
+                )
+                .toggle-menu__guests-bg.bg-plus.bg-plus-adults
+                h3.toggle-menu__guests-category-person.category-person-children
+                    | Дети
+                .toggle-menu__guests-bg.bg-minus.bg-minus-children.bg-disabled
+                input.toggle-menu__input.input-children(
+                    id = "children"
+                    type = "text"
+                    value = "0"
+                    placeholder = "0"
+                )
+                .toggle-menu__guests-bg.bg-plus.bg-plus-children
+                h3.toggle-menu__guests-category-person.category-person-babies
+                    | Младенцы
+                .toggle-menu__guests-bg.bg-minus.bg-minus-babies.bg-disabled
+                input.toggle-menu__input.input-babies(
+                    id = "babies"
+                    type = "text"
+                    value = "0"
+                    placeholder = "0"
+                )
+                .toggle-menu__guests-bg.bg-plus.bg-plus-babies
+                button.toggle-menu__button.button-clear.button-clear-hidden(
+                    id = "butClear"
+                )
+                    | очистить
+                button.toggle-menu__button.button-apple(
+                   id = "butApple"
+                )
+                    |применить
+        .search-form__block-submit
+            input.search-form__submit(
+                type = "submit"
+                value = "подобрать номер"
+            )
+            div.background-forward

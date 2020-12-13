@@ -1,2 +1,2 @@
 import "./pages/main.scss";
-import "./js/";
+import "./js/toggleGuests";

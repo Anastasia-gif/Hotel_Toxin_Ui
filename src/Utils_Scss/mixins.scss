@@ -1,0 +1,12 @@
+@mixin fontSize ($fontFamily,$weight,$fontSize,$lineHeight){
+  font-family: $fontFamily;
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+}
+@mixin backgroundImage (){
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

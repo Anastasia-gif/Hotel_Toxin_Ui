@@ -1,0 +1,23 @@
+@import "../Utils_Scss/vars";
+:active, :hover, :focus {
+  outline: 0;
+  outline-offset: 0;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper{
+  width: 1440px;
+  background-color: rgba($darkShade,0.05);
+  padding: 30px;
+}
+.wrapper-cards{
+   padding: 30px;
+  .wrapper-cards__content{
+    padding: 120px 110px 206px 110px;
+  }
+}
+
+@import "../Include_Block/FindNumber";
