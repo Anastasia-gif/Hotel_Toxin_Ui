@@ -9,10 +9,8 @@ window.onload = function () {
             $("#toggleMenu").slideToggle("slow");
             if (flag) {
                 $(this).addClass("toggle-input-open");
-                $("#toggleMenu").addClass("toggle-input-open");
             } else {
                 $("#guests").removeClass("toggle-input-open");
-                $("#toggleMenu").removeClass("toggle-input-open");
             }
             flag = !flag;
         }
@@ -108,6 +106,11 @@ window.onload = function () {
 
     $("#butApple").click(function(){
         $("#toggleMenu").hide();
-        $("#guests").removeClass("toggle-input-open");
+        if (flag) {
+            $(this).addClass("toggle-input-open");
+        } else {
+            $("#guests").removeClass("toggle-input-open");
+        }
+        flag = !flag;
     })
 }

@@ -1,6 +1,6 @@
 .wrapper-search-form
-    form.search-form
-        .search-form__block-header
+    form.search-form.search-form-find-number
+        .search-form__block-header.block-header-find-number
             h1.search-form__header.header-find-number
                 | Найдём номера под
                 br
@@ -18,7 +18,7 @@
                     id="departure"
                     placeholder = "ДД.ММ.ГГГГ"
                 )
-        .search-form__block-text-input
+        .search-form__block-input-type-text.input-with-label
             label.search-form__label
                 | Гости
                 input.search-form__input.background-arrow(
@@ -26,44 +26,44 @@
                     id = "guests"
                     placeholder="Сколько гостей"
                 )
-        .search-form__block-guests-toggle-menu.toggle-menu-open#toggleMenu
+        .search-form__block-guests-toggle-menu.toggle-block-menu-open#toggleMenu
             .toggle-menu
                 h3.toggle-menu__guests-category-person.category-person-adults
                     | Взрослые
-                .toggle-menu__guests-bg.bg-minus.bg-minus-adults.bg-disabled
+                .toggle-menu__guests-bg.bg-minus.bg-minus-adults.bg-disabled.cursor
                 input.toggle-menu__input.input-adults(
                         id = "adults"
                         type = "text"
                         value = "0"
                         placeholder = "0"
                 )
-                .toggle-menu__guests-bg.bg-plus.bg-plus-adults
+                .toggle-menu__guests-bg.bg-plus.bg-plus-adults.cursor
                 h3.toggle-menu__guests-category-person.category-person-children
                     | Дети
-                .toggle-menu__guests-bg.bg-minus.bg-minus-children.bg-disabled
+                .toggle-menu__guests-bg.bg-minus.bg-minus-children.bg-disabled.cursor
                 input.toggle-menu__input.input-children(
                     id = "children"
                     type = "text"
                     value = "0"
                     placeholder = "0"
                 )
-                .toggle-menu__guests-bg.bg-plus.bg-plus-children
+                .toggle-menu__guests-bg.bg-plus.bg-plus-children.cursor
                 h3.toggle-menu__guests-category-person.category-person-babies
                     | Младенцы
-                .toggle-menu__guests-bg.bg-minus.bg-minus-babies.bg-disabled
+                .toggle-menu__guests-bg.bg-minus.bg-minus-babies.bg-disabled.cursor
                 input.toggle-menu__input.input-babies(
                     id = "babies"
                     type = "text"
                     value = "0"
                     placeholder = "0"
                 )
-                .toggle-menu__guests-bg.bg-plus.bg-plus-babies
-                button.toggle-menu__button.button-clear.button-clear-hidden(
+                .toggle-menu__guests-bg.bg-plus.bg-plus-babies.cursor
+                button.toggle-menu__button.button-clear.button-clear-hidden.cursor(
                     id = "butClear"
                     type = "button"
                 )
                     | очистить
-                button.toggle-menu__button.button-apple(
+                button.toggle-menu__button.button-apple.cursor(
                    id = "butApple"
                    type = "button"
                 )
