@@ -1,14 +1,110 @@
 @import "../Utils_Scss/vars";
+@import "../Utils_Scss/mixins";
 
-.search-form__datepicker{
+.search-form__datepicker {
   visibility: hidden;
   width: 0;
   position: absolute;
-
 }
-.datepicker{
+
+.datepicker {
   width: 320px;
 }
-.datepicker--nav-action{
-  background-image: url("./assets/");
+
+.datepicker--nav-action {
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  align-self: center;
+
+  & svg {
+    display: none;
+  }
+}
+
+.datepicker--nav-action[data-action=prev] {
+  background-image: url("/assets/img/arrowBack.png");
+}
+
+.datepicker--nav-action[data-action=next] {
+  background-image: url("/assets/img/arrowForward.png");
+}
+
+.datepicker--nav-title {
+  @include fontSize($Mons, bold, $fontSizeH2, $lineHeightH2); //$fontFamily,$weight,$fontSize,$lineHeight
+  color: $darkShade;
+
+  & i {
+    color: $darkShade;
+  }
+}
+
+.datepicker--nav {
+  height: 64px;
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 17px;
+  padding-top: 8px;
+  border-bottom: none;
+}
+
+.datepicker--content {
+  padding: 13px 19px 0 21px;
+}
+
+.datepicker--days-names {
+  margin-bottom: 10px;
+
+  & .datepicker--day-name {
+    @include fontSize($Mons, bold, $fontSizeH3, $lineHeightH3); //$fontFamily,$weight,$fontSize,$lineHeight
+    color: $purple;
+  }
+}
+.datepicker--cell.-in-range-{
+  background: linear-gradient(180deg, rgba($purple,0.25) 0% rgba($blue,0.25) 100%);
+
+}
+
+.datepicker--cells {
+  color: rgba($darkShade,0.5);
+  & .datepicker--cell {
+    margin-bottom: 0px;
+    width: 40px;
+    height: 40px;
+    @include fontSize($Mons, normal, $fontSizeH3, $lineHeightH3); //$fontFamily,$weight,$fontSize,$lineHeight
+    text-transform: uppercase;
+    &:hover{
+      background: linear-gradient(180deg, $purple 0, $blue 100%);
+      border-radius: 22px;
+    }
+  }
+}
+.-current- {
+  background: linear-gradient(180deg, $green 0, $blue 100%);
+  border-radius: 22px;
+  &:hover{
+    background: linear-gradient(180deg, $purple 0, $blue 100%);
+    color: $white;
+  }
+}
+.datepicker--cell.-current-{
+  color: $white;
+  font-weight: bold;
+  &:hover{
+    color: $white;
+  }
+}
+.-selected-{
+  background: linear-gradient(180deg, $purple 0, $blue 100%);
+  border-radius: 22px;
+}
+.datepicker--cell.-selected-, .datepicker--cell.-selected-.-current- {
+  color: #fff;
+  background: linear-gradient(180deg, $purple 0, $blue 100%);
+  border-radius: 22px;
+}
+.datepicker--cell.-range-to- {
+  color: #fff;
+  background: linear-gradient(180deg, $purple 0, $blue 100%);
+  border-radius: 22px;
 }
