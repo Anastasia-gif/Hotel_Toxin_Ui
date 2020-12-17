@@ -1,0 +1,11 @@
+@import "../Utils_Scss/vars";
+
+.search-form__datepicker{
+  visibility: hidden;
+  width: 0;
+  position: absolute;
+
+}
+.datepicker{
+  width: 320px;
+}

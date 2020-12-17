@@ -6,17 +6,23 @@
                 br
                 | ваши пожелания
         .search-form__block-date-input
+            input.search-form__datepicker(
+                type = "text"
+                id = "datepicker"
+            )
             label.search-form__label
                 |Прибытие
                 input.search-form__input.background-arrow(
                     id="arrival"
                     placeholder = "ДД.ММ.ГГГГ"
+                    autocomplete = "off"
                 )
             label.search-form__label
                 |Выезд
                 input.search-form__input.background-arrow(
                     id="departure"
                     placeholder = "ДД.ММ.ГГГГ"
+                    autocomplete = "off"
                 )
         .search-form__block-input-type-text.input-with-label
             label.search-form__label

@@ -280,3 +280,9 @@ button {
   border-right: 1px solid rgba($darkShade, 0.5);
   border-bottom: 1px solid rgba($darkShade,0.25);
 }
+.search-form__datepicker{
+  visibility: hidden;
+  width: 0;
+  position: absolute;
+
+}

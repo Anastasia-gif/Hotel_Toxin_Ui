@@ -1,3 +1,5 @@
+import "air-datepicker/"
+
 window.onload = function () {
     let t = document.getElementById("guests");
     let idElem = $("#guests");
