@@ -68,20 +68,20 @@
 .datepicker--cells {
   color: rgba($darkShade,0.5);
   & .datepicker--cell {
-    margin-bottom: 0px;
-    width: 40px;
-    height: 40px;
+    margin-bottom: 0;
+    width: $digitalCellWidth;
+    height: $digitalCellHeight;
     @include fontSize($Mons, normal, $fontSizeH3, $lineHeightH3); //$fontFamily,$weight,$fontSize,$lineHeight
     text-transform: uppercase;
     &:hover{
       background: linear-gradient(180deg, $purple 0, $blue 100%);
-      border-radius: 22px;
+      border-radius:  $borderRadiusButton;
     }
   }
 }
 .-current- {
   background: linear-gradient(180deg, $green 0, $blue 100%);
-  border-radius: 22px;
+  border-radius: $borderRadiusButton;
   &:hover{
     background: linear-gradient(180deg, $purple 0, $blue 100%);
     color: $white;
@@ -96,15 +96,30 @@
 }
 .-selected-{
   background: linear-gradient(180deg, $purple 0, $blue 100%);
-  border-radius: 22px;
+  border-radius: $borderRadiusButton;
 }
-.datepicker--cell.-selected-, .datepicker--cell.-selected-.-current- {
-  color: #fff;
-  background: linear-gradient(180deg, $purple 0, $blue 100%);
-  border-radius: 22px;
+.datepicker--cell.-range-from-{
+  @include datepickerRangeStyle($borderRadiusButton,0,0,$borderRadiusButton);  //$bordRadLeftTop, $bordRadRightTop, $bordRadRightBot, $bordRadLeftBot, $bordRadLeftTopTho, $bordRadLeftTopTho, $bordRadRightBotTho, $bordRadLeftBotTho
 }
 .datepicker--cell.-range-to- {
-  color: #fff;
-  background: linear-gradient(180deg, $purple 0, $blue 100%);
-  border-radius: 22px;
+  @include datepickerRangeStyle(0,$borderRadiusButton,$borderRadiusButton,0);  //$bordRadLeftTop, $bordRadRightTop, $bordRadRightBot, $bordRadLeftBot, $bordRadLeftTopTho, $bordRadLeftTopTho, $bordRadRightBotTho, $bordRadLeftBotTho
+}
+
+.datepicker--custom{
+  border-width:1px;
+  border-style:solid none none;
+  text-align:center;
+  padding:4px;
+}
+*[vp-button]{
+  padding:2px 1ex;
+}
+*[vp-button]
+, .datepicker--nav-title
+, .datepicker--cell{
+  font-size:13px;
+}
+
+*[vp-button]{
+  cursor:pointer;
 }

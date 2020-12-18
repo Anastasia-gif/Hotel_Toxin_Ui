@@ -1,3 +1,5 @@
+@import "./vars";
+
 @mixin fontSize ($fontFamily,$weight,$fontSize,$lineHeight){
   font-family: $fontFamily;
   font-style: normal;
@@ -9,4 +11,26 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+@mixin datepickerRangeStyle($bordRadLeftTop, $bordRadRightTop, $bordRadRightBot, $bordRadLeftBot){
+  background: linear-gradient(180deg, rgba($purple,0.25) 0% rgba($blue,0.25) 100%);
+  border-radius: $bordRadLeftTop $bordRadRightTop $bordRadRightBot $bordRadLeftBot;
+  width: $digitalCellWidth;
+  height: $digitalCellHeight;
+  & div{
+    width: 100%;
+    height: 100%;
+    color: $white;
+    text-align: center;
+    padding-top: 6px;
+    background: linear-gradient(180deg, $purple 0, $blue 100%);
+    border-radius: $borderRadiusButton;
+    & div{
+      background: none;
+    }
+  }
+  &:hover{
+    background: linear-gradient(180deg, rgba($purple,0.25) 0% rgba($blue,0.25) 100%);
+    border-radius: $bordRadLeftTop $bordRadRightTop $bordRadRightBot $bordRadLeftBot;
+  }
 }
