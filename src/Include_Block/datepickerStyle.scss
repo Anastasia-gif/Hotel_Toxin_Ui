@@ -50,6 +50,7 @@
 
 .datepicker--content {
   padding: 13px 19px 0 21px;
+  border-bottom: none;
 }
 
 .datepicker--days-names {
@@ -105,21 +106,28 @@
   @include datepickerRangeStyle(0,$borderRadiusButton,$borderRadiusButton,0);  //$bordRadLeftTop, $bordRadRightTop, $bordRadRightBot, $bordRadLeftBot, $bordRadLeftTopTho, $bordRadLeftTopTho, $bordRadRightBotTho, $bordRadLeftBotTho
 }
 
-.datepicker--custom{
-  border-width:1px;
-  border-style:solid none none;
-  text-align:center;
-  padding:4px;
-}
-*[vp-button]{
-  padding:2px 1ex;
-}
-*[vp-button]
-, .datepicker--nav-title
-, .datepicker--cell{
-  font-size:13px;
-}
-
-*[vp-button]{
-  cursor:pointer;
+.datepicker--buttons{
+  border-top: none;
+  padding: 23px 20px 20px 20px;
+  & .datepicker--button{
+    @include fontSize($Mons, bold, $fontSizeH3, $lineHeightH3); //$fontFamily,$weight,$fontSize,$lineHeight
+    text-transform: uppercase;
+    color: $purple;
+    background-color: $white;
+    &:hover{
+      background-color: $white;
+    }
+  }
+  & span{
+    width: 72px;
+    height: 15px;
+    text-align: start;
+    justify-content: start;
+  }
+  & button{
+    width: 84px;
+    height: 15px;
+    border: none;
+    justify-content: flex-end;
+  }
 }
