@@ -17,22 +17,33 @@ function installRangeDatepicker(fieldFrom, fieldTo) {
             top: pos.top, left: pos.left
         })
     }
-
-    departure.click(function () {
-        setPosDatepicker();
-        $(datepicker).focus();
-    })
-    arrival.click(function () {
-        setPosDatepicker();
-        $(datepicker).focus();
-    })
+    function installEvents(tagInput){
+        tagInput.click(function (e) {
+            let x = tagInput[0].clientWidth - e.offsetX;
+            if (x > 44)return;
+            setPosDatepicker();
+            $(datepicker).click();
+        })
+        tagInput.mousemove(function (e) {
+            let x = tagInput[0].clientWidth - e.offsetX;
+            if (x < 44) {
+                tagInput[0].style.cursor = 'pointer';
+                tagInput[0].style.color = "rgba(31, 32, 65, 0.75)";
+            } else {
+                tagInput[0].style.cursor = 'default';
+            }
+        })
+    };
+    installEvents(arrival);
+    installEvents(departure);
 
     $(datepicker).datepicker({
         range: true,
+        showEvent:"click",
         onSelect: function (e) {
             let dates = e.split(',');
             arrival.val(dates[0]);
-            departure.val(dates[1]);
+            tagInput.val(dates[1]);
             // if(dates.length===2){
             //     datepicker.datepicker().data().datepicker.hide();
             // }

@@ -1,12 +1,12 @@
 import "air-datepicker/"
 
 window.onload = function () {
-    let t = document.getElementById("guests");
     let idElem = $("#guests");
+    let t=idElem[0];
     let flag = true;
     let elements = $(".toggle-menu__input");
     idElem.click(function (e) {
-        let x = t.clientWidth - e.clientX;
+        let x = t.clientWidth - e.offsetX;
         if (x < 44) {
             $("#toggleMenu").slideToggle("slow");
             if (flag) {
@@ -19,7 +19,7 @@ window.onload = function () {
 
     })
     idElem.mousemove(function (e) {
-        let x = t.clientWidth - e.clientX;
+        let x = t.clientWidth - e.offsetX;
         if (x < 44) {
             t.style.cursor = 'pointer';
             t.style.color = "rgba(31, 32, 65, 0.75)";
